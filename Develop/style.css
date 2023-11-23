@@ -1,6 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+header {
+  color: navy
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px; 
+  padding: 20px; 
+  text-align: center;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
+  background-image: url('../Assets/freeb.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.container-fluid {
+  perspective: 1000px; /* Adjust as needed for depth */
+  overflow-y: auto;
+  max-height: 600px;
 }
 
 textarea {
@@ -17,43 +38,84 @@ textarea {
 }
 
 .time-block {
-  border-radius: 15px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.time-block:hover {
+  background-color: rgba(103, 255, 15, 0.333); 
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); 
 }
 
 .row {
-  border-top: 1px solid white;
+  border-top: 1px solid rgba(255, 255, 255, 0.464);
+  transform-origin: center center;
+  backface-visibility: hidden; 
+  transform-origin: 50% 100%; /* Adjust to control the horizon effect */
+  transform-style: preserve-3d; /* Keep 3D layout for children */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
 .hour {
-  background-color: #ffffff;
+  background-color: #cdc0f58f;
   color: #000000;
-  border-top: 1px dashed #000000;
 }
 
+#currentDay {
+  color: rgba(71, 0, 0, 0.788);
+  text-size-adjust: 20px;
+}
+
+
 .past {
-  background-color: #d3d3d3;
+  background-color: rgba(148, 154, 199, 0.659); 
   color: white;
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: #d40e04e7; 
   color: white;
 }
 
 .future {
-  background-color: #77dd77;
-  color: white;
+  background-color: #30d030e6; 
+  color: rgba(255, 255, 255, 0);
+  text
+  
 }
 
 .saveBtn {
   border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
 }
 
 .saveBtn i:hover {
   font-size: 20px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+::-webkit-scrollbar {
+    width: 8px; 
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f13f; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #88888888; 
+    border-radius: 4px; 
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+@media (max-width: 600px) {
+  header {
+    font-size: 18px;
+    padding: 10px;
+}
 }
